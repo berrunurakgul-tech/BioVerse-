@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10251f">
+  <meta name="description" content="BioVerse — etkileşimli biyoloji laboratuvarı">
+  <title>BioVerse | Fotosentez Laboratuvarı</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="BioVerse ana sayfa">
+        <span class="brand-mark">B</span><span>Bio<span class="brand-light">Verse</span></span>
+      </a>
+      <div class="top-meta"><span class="status-dot"></span> SANAL BİYOLOJİ LABORATUVARI</div>
+      <button id="installBtn" class="quiet-button" hidden>Uygulamayı yükle</button>
+    </header>
+
+<nav class="lab-navigation" aria-label="BioVerse laboratuvarları">
+  <a href="#scene" class="lab-nav-link active" data-lab-link="photosynthesis">
+    <span>01</span>
+    Fotosentez
+  </a>
+
+  <a href="#respirationLab" class="lab-nav-link" data-lab-link="respiration">
+    <span>02</span>
+    Hücresel solunum
+  </a>
+
+  <a href="#cyclePanel" class="lab-nav-link" data-lab-link="cycle">
+    <span>03</span>
+    Süreçlerin bağlantısı
+  </a>
+</nav>
+
+    <main>
+      <section class="intro">
+        <div class="eyebrow">LABORATUVAR 01 <span>•</span> BİTKİ BİYOLOJİSİ</div>
+        <h1>Yaşamın içine<br><em>yolculuk.</em></h1>
+        <p>Bir yaprağın içinden kloroplasta ilerle. Işığı, suyu ve CO₂'yi değiştir; fotosentezin nasıl tepki verdiğini keşfet.</p>
+      </section>
+
+      <section class="workspace">
+        <div class="visual-panel panel">
+          <div class="panel-head">
+            <div><div class="section-kicker">CANLI GÖRÜNTÜLEME</div><h2>Kloroplast simülasyonu</h2></div>
+            <span class="live-pill"><span></span> CANLI</span>
+          </div>
+          ```html
+<div class="scene-wrap">
+  <canvas id="scene" aria-label="Hareketli kloroplast simülasyonu"></canvas>
+
+  <div class="scene-label label-top">
+    <span class="label-line"></span>
+    <span>Tilakoit zarları</span>
+  </div>
+
+  <div class="scene-label label-bottom">
+    <span class="label-line"></span>
+    <span>Stroma</span>
+  </div>
+
+  <span class="pulse"></span>
+  <span class="scene-caption">IŞIK ENERJİSİ AKIŞI</span>
+
+  <button class="structure-marker marker-thylakoid" data-structure="thylakoid" aria-label="Tilakoitler hakkında bilgi">1</button>
+  <button class="structure-marker marker-stroma" data-structure="stroma" aria-label="Stroma hakkında bilgi">2</button>
+  <button class="structure-marker marker-calvin" data-structure="calvin" aria-label="Calvin döngüsü hakkında bilgi">3</button>
+</div>
+
+<div id="structureInfo" class="structure-info" aria-live="polite">
+  <strong>Kloroplastı keşfet</strong>
+  <p>Numaralı işaretlere tıklayarak yapıları ve görevlerini öğren.</p>
+</div>
+
+<div class="legend">
+  <span><i class="legend-dot light"></i> Işık</span>
+  <span><i class="legend-dot water"></i> H₂O</span>
+  <span><i class="legend-dot carbon"></i> CO₂</span>
+  <span><i class="legend-dot oxygen"></i> O₂</span>
+</div>
+```
+          <div class="stage-strip">
+            <button class="stage active" data-stage="0"><b>01</b><span>Işık tepkimeleri</span></button>
+            <button class="stage" data-stage="1"><b>02</b><span>Elektron taşınması</span></button>
+            <button class="stage" data-stage="2"><b>03</b><span>Calvin döngüsü</span></button>
+          </div>
+        </div>
+
+        <aside class="control-panel panel">
+          <div class="section-kicker">DENEY KONTROLÜ</div>
+          <h2>Koşulları değiştir</h2>
+          <p class="panel-copy">Bir değişkeni ayarla ve fotosentez hızındaki tahmini değişimi gözlemle.</p>
+
+          <div class="control-group">
+            <div class="control-title"><label for="light">Işık şiddeti</label><output id="lightOut">60%</output></div>
+            <input id="light" type="range" min="0" max="100" value="60">
+            <div class="range-labels"><span>Düşük</span><span>Yüksek</span></div>
+          </div>
+          <div class="control-group">
+            <div class="control-title"><label for="co2">CO₂ miktarı</label><output id="co2Out">60%</output></div>
+            <input id="co2" type="range" min="0" max="100" value="60">
+            <div class="range-labels"><span>Az</span><span>Çok</span></div>
+          </div>
+          <div class="control-group">
+            <div class="control-title"><label for="water">Su miktarı</label><output id="waterOut">70%</output></div>
+            <input id="water" type="range" min="0" max="100" value="70">
+            <div class="range-labels"><span>Az</span><span>Çok</span></div>
+          </div>
+
+          <div class="rate-card">
+            <div class="rate-top"><span>TAHMİNİ FOTOSENTEZ HIZI</span><span class="info-dot" title="Bu, öğretici amaçlı basitleştirilmiş bir modeldir.">i</span></div>
+            <div class="rate-number"><strong id="rateValue">60</strong><span>/ 100</span></div>
+            <div class="meter"><span id="rateBar"></span></div>
+            <p id="rateNote">Işık, CO₂ ve su koşulları dengeli.</p>
+          </div>
+          <button id="resetBtn" class="reset-button">↺ Deneyi sıfırla</button>
+        </aside>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel lesson-panel">
+          <div class="section-kicker">KEŞFET · AŞAMA <span id="stageNum">01</span></div>
+          <h2 id="stageTitle">Işık tepkimeleri</h2>
+          <p id="stageDescription">Tilakoit zarlarında bulunan klorofil, ışık enerjisini soğurur. Su moleküllerinden elektronlar sağlanır ve oksijen açığa çıkar. Bu aşamada ATP ve NADPH üretilir.</p>
+          <div class="equation-box">
+            <span class="equation-label">FOTOSENTEZİN GENEL DENKLEMİ</span>
+            <div class="equation">6CO₂ + 6H₂O <span>— ışık →</span> C₆H₁₂O₆ + 6O₂</div>
+            <p>Genel ve basitleştirilmiş gösterimdir; fotosentez birden fazla tepkimeden oluşur.</p>
+          </div>
+          <div class="lesson-actions">
+            <button id="prevStage" class="secondary-button" disabled>← Önceki</button>
+            <button id="nextStage" class="primary-button">Sonraki aşama <span>→</span></button>
+          </div>
+        </article>
+        <article class="panel results-panel">
+          <div class="section-kicker">DENEY GÜNLÜĞÜ</div>
+          <h2>Değişkenlerin etkisi</h2>
+          <p class="panel-copy">Hız, en sınırlayıcı değişkene göre basitçe hesaplanır. Gerçek bitkilerde sıcaklık ve başka koşullar da önemlidir.</p>
+          <div class="bar-row"><span>Işık</span><div class="mini-track"><i id="lightMini"></i></div><b id="lightMiniText">60</b></div>
+          <div class="bar-row"><span>CO₂</span><div class="mini-track"><i id="co2Mini"></i></div><b id="co2MiniText">60</b></div>
+          <div class="bar-row"><span>Su</span><div class="mini-track"><i id="waterMini"></i></div><b id="waterMiniText">70</b></div>
+         ```html
+<div id="experimentResult" class="experiment-result" aria-live="polite">
+  <strong>Deney sonucu</strong>
+  <p>Değişkenleri ayarlayarak fotosentez hızının nasıl etkilendiğini keşfet.</p>
+  <span id="experimentSuggestion">Bir değişkeni değiştir ve sonucu gözlemle.</span>
+</div>
+```html
+<div class="experiment-chart">
+  <div class="chart-heading">
+    <strong>Fotosentez hız grafiği</strong>
+    <span id="chartRate">60%</span>
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-y-labels">
+      <span>100</span>
+      <span>75</span>
+      <span>50</span>
+      <span>25</span>
+      <span>0</span>
+    </div>
+
+    <div class="chart-plot">
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+      <div class="chart-grid-line"></div>
+
+      <svg id="rateChart" viewBox="0 0 300 120"
+           preserveAspectRatio="none"
+           role="img"
+           aria-label="Fotosentez hızını gösteren canlı grafik">
+        <polyline id="rateChartLine"
+          points="0,48 300,48"
+          fill="none"
+          stroke="#b8ef8d"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="chart-axis-labels">
+    <span>Önceki ölçümler</span>
+    <span>Şimdiki sonuç</span>
+  </div>
+</div>
+``` ```<div class="experiment-tip"><span class="tip-icon">✦</span><div><b>Mini deney</b><p>Işık şiddetini azalt. Diğer koşullar aynı kalırken hızın neden değiştiğini açıkla.</p></div></div>
+       
+<section class="notebook-panel">
+  <div class="section-kicker">BİLİMSEL ÇALIŞMA</div>
+  <h3>Deney defterim</h3>
+
+  <p class="notebook-intro">
+    Deney koşullarını kaydet ve gözlemlerini yaz.
+  </p>
+
+  <div class="notebook-summary">
+    <div>
+      <span>Işık</span>
+      <strong id="saveLight">60%</strong>
+    </div>
+    <div>
+      <span>CO₂</span>
+      <strong id="saveCo2">60%</strong>
+    </div>
+    <div>
+      <span>Su</span>
+      <strong id="saveWater">70%</strong>
+    </div>
+    <div>
+      <span>Hız</span>
+      <strong id="saveRate">60%</strong>
+    </div>
+  </div>
+
+  <label class="notebook-label" for="experimentObservation">
+    Deney gözlemim
+  </label>
+
+  <textarea
+    id="experimentObservation"
+    rows="4"
+    placeholder="Örneğin: Işık miktarını azalttığımda fotosentez hızı..."
+  ></textarea>
+
+  <button id="saveExperimentBtn" class="primary-button" type="button">
+    Deneyi kaydet
+  </button>
+
+  <div class="notebook-records">
+    <h4>Kaydedilen deneyler</h4>
+    <p id="notebookEmpty">Henüz kaydedilmiş bir deney yok.</p>
+    <div id="experimentRecords"></div>
+  </div>
+</section>
+ </article>
+      </section>
+
+     
+<!-- HÜCRESEL SOLUNUM LABORATUVARI -->
+<section id="respirationLab" class="panel respiration-panel">
+  <div class="section-kicker">BIOVERSE · LABORATUVAR 02</div>
+
+  <h2>Hücresel Solunum</h2>
+
+  <p class="panel-copy">
+    Hücrelerin glikozdaki enerjiyi ATP biçiminde kullanılabilir
+    enerjiye dönüştürmesini keşfet.
+  </p>
+
+  <div class="respiration-visual">
+    <div class="mitochondrion">
+      <div class="mitochondrion-inner">
+        <div class="crista crista-one"></div>
+        <div class="crista crista-two"></div>
+        <div class="crista crista-three"></div>
+        <div class="crista crista-four"></div>
+        <span class="mitochondrion-label">MİTOKONDRİ</span>
+      </div>
+    </div>
+    <p class="visual-caption">
+      İç zar kıvrımları: Kristalar
+    </p>
+  </div>
+
+  <div class="respiration-controls">
+    <div class="control-heading">
+      <label for="glucoseInput">Glikoz miktarı</label>
+      <strong><span id="glucoseValue">70</span>%</strong>
+    </div>
+    <input
+      id="glucoseInput"
+      type="range"
+      min="0"
+      max="100"
+      value="70"
+    />
+
+    <div class="control-heading">
+      <label for="oxygenInput">Oksijen kullanılabilirliği</label>
+      <strong><span id="oxygenValue">70</span>%</strong>
+    </div>
+    <input
+      id="oxygenInput"
+      type="range"
+      min="0"
+      max="100"
+      value="70"
+    />
+  </div>
+
+  <div class="respiration-result" aria-live="polite">
+    <span class="result-label">MODELDEKİ ENERJİ ÜRETİMİ</span>
+    <div class="atp-value">
+      <strong id="atpValue">70</strong>
+      <span>/ 100</span>
+    </div>
+    <div class="atp-track">
+      <div id="atpBar" class="atp-bar"></div>
+    </div>
+    <p id="respirationNote">
+      Koşullar dengeli. Değerleri değiştirerek modeli incele.
+    </p>
+  </div>
+
+  
+<div class="respiration-stages">
+  <h3>Solunumun aşamalarını keşfet</h3>
+  <p class="panel-copy">
+    Bir aşamaya tıklayarak nerede gerçekleştiğini ve görevini öğren.
+  </p>
+
+  <div class="respiration-stage-buttons">
+    <button type="button" class="resp-stage-btn active" data-resp-stage="glycolysis">
+      1. Glikoliz
+    </button>
+    <button type="button" class="resp-stage-btn" data-resp-stage="krebs">
+      2. Krebs döngüsü
+    </button>
+    <button type="button" class="resp-stage-btn" data-resp-stage="etc">
+      3. Elektron taşıma
+    </button>
+  </div>
+
+  <div id="respStageInfo" class="resp-stage-info" aria-live="polite">
+    <h4>Glikoliz</h4>
+    <p>
+      Sitoplazmada gerçekleşir. Bir glikoz molekülü iki pirüvat
+      molekülüne ayrılır; net 2 ATP ve NADH oluşur.
+    </p>
+    <span class="resp-stage-location">Konum: Sitoplazma</span>
+  </div>
+</div>
+<div class="respiration-facts">
+    <h3>Bilimsel bilgi</h3>
+    <p>
+      Hücresel solunumun genel denkleminde glikoz ve oksijen
+      kullanılır; karbondioksit, su ve enerji açığa çıkar.
+      ATP, hücrenin enerji aktarımında kullandığı moleküldür.
+    </p>
+    <p class="equation">
+      Glikoz + O₂ → CO₂ + H₂O + enerji
+    </p>
+    <p>
+      Not: Bu etkileşimli model eğitim amaçlıdır. Üretim puanı,
+      gerçek ATP miktarını veya hücredeki ATP verimini göstermez.
+    </p>
+  </div>
+</section>
+ 
+<!-- FOTOSENTEZ VE HÜCRESEL SOLUNUM BAĞLANTISI -->
+<section id="cyclePanel" class="panel cycle-panel"></section>
+  <div class="section-kicker">BİYOLOJİK SİSTEMLER</div>
+  <h2>Maddenin döngüsü, enerjinin akışı</h2>
+
+  <p class="panel-copy">
+    Fotosentez ve hücresel solunum, canlılardaki madde ve enerji
+    dönüşümlerinin birbiriyle bağlantılı iki sürecidir.
+  </p>
+
+  <div class="cycle-flow">
+    <div class="cycle-node photosynthesis-node">
+      <span class="cycle-icon">☀</span>
+      <h3>Fotosentez</h3>
+      <p>Işık enerjisi kullanılır.</p>
+      <strong>CO₂ + H₂O</strong>
+      <span class="cycle-arrow">↓</span>
+      <strong>Organik madde + O₂</strong>
+    </div>
+
+    <div class="cycle-connector">
+      <span>Organik madde ve O₂</span>
+      <span class="connector-arrow">→</span>
+    </div>
+
+    <div class="cycle-node respiration-node">
+      <span class="cycle-icon">⚡</span>
+      <h3>Hücresel solunum</h3>
+      <p>Besinlerdeki enerji aktarılır.</p>
+      <strong>Organik madde + O₂</strong>
+      <span class="cycle-arrow">↓</span>
+      <strong>CO₂ + H₂O + ATP</strong>
+    </div>
+
+    <div class="cycle-connector return-connector">
+      <span>CO₂ ve H₂O</span>
+      <span class="connector-arrow">←</span>
+    </div>
+  </div>
+
+  <div class="cycle-note">
+    <strong>Önemli ayrım</strong>
+    <p>
+      Maddenin atomları süreçler arasında yeniden düzenlenir.
+      Enerji ise dönüşür ve hücresel süreçlerde aktarılır;
+      enerji madde gibi döngü yapmaz. Fotosentez ışık enerjisini
+      kimyasal enerjiye dönüştürür, solunum ise organik
+      moleküllerdeki enerjinin ATP'ye aktarılmasını sağlar.
+    </p>
+  </div>
+</section>
+
+<!-- BIOVERSE — ETKİLEŞİMLİ HÜCRE LABORATUVARI -->
+<section id="cellLab" class="panel cell-lab-panel">
+  <div class="section-kicker">BIOVERSE · LABORATUVAR 04</div>
+
+  <h2>Hücrenin İçine Yolculuk</h2>
+
+  <p class="panel-copy">
+    Hücrenin bölümlerini keşfet. Bir organeli seçerek görevini öğren.
+  </p>
+
+  <div class="cell-lab-layout">
+    <div class="cell-visual-area">
+      <div class="interactive-cell" id="interactiveCell">
+       
+<div class="cell-particle particle-one"></div>
+<div class="cell-particle particle-two"></div>
+<div class="cell-particle particle-three"></div>
+ <button class="organelle nucleus" data-organelle="nucleus"
+          type="button" aria-label="Çekirdeği incele">
+          <span>Çekirdek</span>
+        </button>
+
+        <button class="organelle mitochondrion cell-mito-one"
+          data-organelle="mitochondrion" type="button"
+          aria-label="Mitokondriyi incele">
+          <span>Mitokondri</span>
+        </button>
+
+        <button class="organelle mitochondrion cell-mito-two"
+          data-organelle="mitochondrion" type="button"
+          aria-label="Mitokondriyi incele">
+          <span>Mitokondri</span>
+        </button>
+
+        <button class="organelle golgi" data-organelle="golgi"
+          type="button" aria-label="Golgi aygıtını incele">
+          <span>Golgi</span>
+        </button>
+
+        <button class="organelle vacuole" data-organelle="vacuole"
+          type="button" aria-label="Kofulu incele">
+          <span>Koful</span>
+        </button>
+
+        <button class="organelle ribosome" data-organelle="ribosome"
+          type="button" aria-label="Ribozomları incele">
+          <span>Ribozom</span>
+        </button>
+      </div>
+
+      <p class="visual-caption">
+        Şematik ökaryot hayvan hücresi · Görsel ölçekli değildir.
+      </p>
+    </div>
+
+    <div class="organelle-info" aria-live="polite">
+      <div class="section-kicker">ORGANEL BİLGİSİ</div>
+      <h3 id="organelleTitle">Bir organel seç</h3>
+      <p id="organelleDescription">
+        Hücre modelindeki renkli bölümlere tıklayarak bilgi alabilirsin.
+      </p>
+      <p id="organelleLocation" class="organelle-location">
+        Seçim bekleniyor
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BIOVERSE — DENEY GÖREVİ -->
+<section id="experimentMission" class="panel experiment-mission">
+  <div class="section-kicker">BIOVERSE · LABORATUVAR 06</div>
+  <h2>Deney Görevleri</h2>
+  <p class="panel-copy">
+    Hipotez kur, değişkenleri incele ve gözlemlerini bilimsel
+    sonuçlarla karşılaştır.
+  </p>
+
+  <div class="mission-card">
+    <div class="mission-number">DENEY 01</div>
+    <h3>Işık fotosentezi etkiler mi?</h3>
+    <p>
+      Işık miktarını değiştirerek fotosentez hızının nasıl
+      değiştiğini incele. Diğer koşulları mümkün olduğunca
+      sabit tut.
+    </p>
+
+    <label for="missionHypothesis">Hipotezin nedir?</label>
+    <select id="missionHypothesis">
+      <option value="">Bir hipotez seç...</option>
+      <option value="increase">Işık artarsa fotosentez hızı artabilir.</option>
+      <option value="decrease">Işık artarsa fotosentez hızı azalabilir.</option>
+      <option value="same">Işık miktarı fotosentezi etkilemez.</option>
+    </select>
+
+    <label for="missionLight">Deneydeki ışık miktarı</label>
+    <input id="missionLight" type="range" min="0" max="100" value="50" />
+    <p class="mission-reading">
+      Işık seviyesi: <strong id="missionLightValue">50</strong>/100
+    </p>
+
+    <button type="button" id="runMission">Deney sonucunu incele</button>
+
+    <div id="missionResult" class="mission-result" aria-live="polite">
+      <h4>Gözlem alanı</h4>
+      <p>Hipotezini seç ve deney koşulunu belirle.</p>
+    </div>
+
+<div class="mission-chart-panel">
+  <h4>Deney Sonuçları Grafiği</h4>
+  <p>Işık seviyelerini karşılaştırmak için deneylerini kaydet.</p>
+  <div id="missionChart" class="mission-chart">
+    Henüz kaydedilmiş deney yok.
+  </div>
+  <button type="button" id="saveMissionResult">
+    Bu sonucu kaydet
+  </button>
+  <button type="button" id="clearMissionResults">
+    Kayıtları temizle
+  </button>
+  <p id="missionSaveStatus" aria-live="polite"></p>
+</div>
+
+    <p id="missionProgress" class="mission-progress">
+      Görev henüz tamamlanmadı.
+    </p>
+  </div>
+</section>
+
+<!-- BIOVERSE — ATP ENERJİ LABORATUVARI -->
+<section id="energyLab" class="panel energy-lab-panel">
+  <div class="section-kicker">BIOVERSE · LABORATUVAR 05</div>
+  <h2>Mitokondri: Enerji Üretimi</h2>
+  <p class="panel-copy">
+    Hücresel solunum sırasında besinlerden elde edilen enerji,
+    ATP üretiminde kullanılır. Animasyonu başlatarak süreci keşfet.
+  </p>
+
+  <div class="energy-stage">
+    <div class="energy-mitochondrion" id="energyMitochondrion">
+      <div class="energy-inner-folds"></div>
+      <span class="energy-label">Mitokondri</span>
+      <span class="atp-particle atp-one">ATP</span>
+      <span class="atp-particle atp-two">ATP</span>
+      <span class="atp-particle atp-three">ATP</span>
+    </div>
+  </div>
+
+  <div class="energy-controls">
+    <button type="button" id="startEnergyAnimation">Enerji üretimini başlat</button>
+    <button type="button" id="resetEnergyAnimation">Başa dön</button>
+  </div>
+
+  <p id="energyStatus" class="energy-status" aria-live="polite">
+    Animasyon başlamayı bekliyor.
+  </p>
+  <p class="energy-note">
+    Bilimsel not: ATP, hücrenin enerji aktarımında kullandığı moleküldür.
+    Ökaryot hücrelerde oksijenli solunumun önemli aşamaları mitokondride gerçekleşir.
+  </p>
+</section>
+
+<!-- BIOVERSE BİLGİ TESTİ -->
+<section id="quizLab" class="panel quiz-panel">
+  <div class="section-kicker">BIOVERSE · BİLGİ MERKEZİ</div>
+
+  <h2>Kendini Sına</h2>
+
+  <p class="panel-copy">
+    Fotosentez ve hücresel solunum bilgini 10 soruyla test et.
+    Her cevaptan sonra açıklamalı geri bildirim al.
+  </p>
+
+  <div class="quiz-progress-info">
+    <span id="quizQuestionCount">Soru 1 / 10</span>
+    <span id="quizScore">Puan: 0</span>
+  </div>
+
+  <div
+    class="quiz-progress-track"
+    role="progressbar"
+    aria-label="Test ilerlemesi"
+    aria-valuemin="0"
+    aria-valuemax="10"
+    aria-valuenow="0"
+    id="quizProgress"
+  >
+    <div id="quizProgressBar"></div>
+  </div>
+
+  <div id="quizQuestionArea">
+    <div class="quiz-topic" id="quizTopic">FOTOSENTEZ</div>
+
+    <h3 id="quizQuestion">
+      Test soruları burada görünecek.
+    </h3>
+
+    <div id="quizOptions" class="quiz-options"></div>
+
+    <div id="quizFeedback" class="quiz-feedback" hidden aria-live="polite">
+      <strong id="quizFeedbackTitle"></strong>
+      <p id="quizFeedbackText"></p>
+    </div>
+
+    <button id="quizNextBtn" class="primary-button" type="button" hidden>
+      Sonraki soru
+    </button>
+  </div>
+
+  <div id="quizFinalResult" class="quiz-final-result" hidden aria-live="polite">
+    <h3>Test tamamlandı!</h3>
+    <p id="quizFinalScore"></p>
+    <p id="quizFinalMessage"></p>
+    <button id="quizRestartBtn" class="primary-button" type="button">
+      Testi yeniden çöz
+    </button>
+  </div>
+</section>
+<footer><span>BioVerse · İlk prototip</span><span>Bilimsel modelleme devam ediyor <i>●</i></span></footer>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(console.warn));
+    }
+    let installPrompt;
+    const installBtn = document.getElementById("installBtn");
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault(); installPrompt = event; installBtn.hidden = false;
+    });
+    installBtn.addEventListener("click", async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; installBtn.hidden = true;
+    });
+  </script>
+</body>
+</html>

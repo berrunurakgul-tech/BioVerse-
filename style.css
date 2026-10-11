@@ -1,0 +1,1815 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0b1512;--panel:#12211c;--panel2:#172a23;--line:#294238;--text:#edf4ed;--muted:#9aafa3;--green:#b8ef8d;--green2:#7ed69a;--gold:#f5d17b;--blue:#81d7ed}
+*{box-sizing:border-box}html{background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif}body{margin:0;background:radial-gradient(ellipse at 70% 0%,#18352a 0,transparent 42%),var(--bg);min-height:100vh}.app-shell{max-width:1320px;margin:auto;padding:0 32px}.topbar{height:76px;display:flex;align-items:center;gap:24px;border-bottom:1px solid #253a31}.brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:800;font-size:21px;text-decoration:none;letter-spacing:-.7px}.brand-mark{display:grid;place-items:center;width:32px;height:32px;background:var(--green);color:#14251b;border-radius:10px;font-size:19px}.brand-light{font-weight:500;color:#b9cbbf}.top-meta{font:10px 'DM Mono',monospace;letter-spacing:1.6px;color:var(--muted);margin-left:auto}.status-dot,.live-pill span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:8px;box-shadow:0 0 12px #a9ef83}.quiet-button{background:transparent;border:1px solid var(--line);color:var(--text);padding:9px 12px;border-radius:9px;cursor:pointer}.intro{padding:52px 0 34px;max-width:720px}.eyebrow,.section-kicker{font:10px 'DM Mono',monospace;letter-spacing:1.5px;color:var(--green2)}.eyebrow span{color:#5b7769;margin:0 8px}.intro h1{font-size:clamp(42px,5vw,66px);line-height:1.02;letter-spacing:-3px;margin:16px 0}.intro h1 em{font-style:normal;color:var(--green)}.intro p{color:#adc0b4;line-height:1.7;max-width:570px;font-size:15px}.workspace{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.8fr);gap:18px}.panel{background:linear-gradient(145deg,#14251f,#101d18);border:1px solid var(--line);border-radius:17px;overflow:hidden}.visual-panel{padding:22px 22px 0}.panel-head{display:flex;justify-content:space-between;align-items:center}.panel h2{font-size:19px;letter-spacing:-.6px;margin:7px 0 0}.live-pill{font:9px 'DM Mono',monospace;letter-spacing:1px;color:#bfe5b6;border:1px solid #3c644b;border-radius:20px;padding:7px 10px}.scene-wrap{height:340px;position:relative;margin-top:15px;background:radial-gradient(ellipse at center,#234637 0,#142b22 48%,#102019 78%);border-radius:13px;overflow:hidden;border:1px solid #2a4b3b}#scene{width:100%;height:100%;display:block}.scene-label{position:absolute;font:10px 'DM Mono',monospace;color:#d2e7d6;display:flex;align-items:center;gap:8px;pointer-events:none}.label-top{top:22px;left:22px}.label-bottom{bottom:35px;right:24px}.label-line{display:block;width:28px;height:1px;background:var(--green2)}.scene-caption{position:absolute;left:17px;bottom:15px;font:9px 'DM Mono',monospace;letter-spacing:1.1px;color:#b1d9b7}.pulse{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:7px;box-shadow:0 0 9px var(--gold)}.legend{display:flex;gap:18px;flex-wrap:wrap;padding:16px 2px 18px;color:#adc0b4;font-size:11px}.legend-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}.light{background:var(--gold)}.water{background:var(--blue)}.carbon{background:#d4a8ff}.oxygen{background:var(--green)}.stage-strip{display:grid;grid-template-columns:repeat(3,1fr);margin:0 -22px;border-top:1px solid var(--line)}.stage{background:transparent;color:#a8bdb0;border:0;border-right:1px solid var(--line);padding:14px 12px;text-align:left;display:flex;gap:10px;align-items:center;cursor:pointer;font:11px Manrope,sans-serif}.stage:last-child{border-right:0}.stage b{font:11px 'DM Mono',monospace;color:#668474}.stage.active{background:#1d382b;color:#e8f6e8}.stage.active b{color:var(--green)}.control-panel{padding:25px 24px}.panel-copy{font-size:12px;line-height:1.65;color:var(--muted);margin:9px 0 22px}.control-group{margin:23px 0}.control-title{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}.control-title output{font:12px 'DM Mono',monospace;color:var(--green)}input[type=range]{width:100%;margin:15px 0 5px;accent-color:var(--green);cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:#6e8879;font-size:10px}.rate-card{margin-top:26px;background:#1a3025;border:1px solid #31523e;border-radius:12px;padding:17px}.rate-top{font:9px 'DM Mono',monospace;letter-spacing:.8px;color:#b4cbb9;display:flex;justify-content:space-between;align-items:center}.info-dot{display:grid;place-items:center;border:1px solid #54725d;width:16px;height:16px;border-radius:50%;font:10px serif}.rate-number{margin:8px 0 10px}.rate-number strong{font-size:38px;letter-spacing:-2px}.rate-number span{font:12px 'DM Mono',monospace;color:#8da696}.meter,.mini-track{background:#2a4335;border-radius:99px;overflow:hidden}.meter{height:6px}.meter span{display:block;height:100%;width:60%;background:linear-gradient(90deg,#83c98d,#c9f49a);border-radius:99px;transition:width .25s}.rate-card p{font-size:10px;color:#a8c2af;line-height:1.5;margin:12px 0 0}.reset-button{width:100%;margin-top:14px;padding:11px;border:1px solid #345043;border-radius:9px;background:transparent;color:#c1d3c7;font:11px Manrope,sans-serif;cursor:pointer}.reset-button:hover,.secondary-button:hover{background:#1b3026}.lower-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.lesson-panel,.results-panel{padding:25px}.lesson-panel h2,.results-panel h2{font-size:22px;margin:9px 0 13px}.lesson-panel>p{color:#b1c4b7;font-size:13px;line-height:1.8;max-width:670px}.equation-box{background:#0d1a15;border:1px solid #2c4538;border-radius:12px;padding:16px;margin-top:20px}.equation-label{font:9px 'DM Mono',monospace;letter-spacing:1px;color:#8eab98}.equation{font-size:clamp(13px,2vw,18px);font-weight:700;margin:12px 0;letter-spacing:-.3px}.equation span{font-size:11px;color:var(--green);font-weight:500}.equation-box p{font-size:10px;line-height:1.6;color:#81988a;margin:0}.lesson-actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.primary-button,.secondary-button{border-radius:9px;padding:12px 15px;font:12px Manrope,sans-serif;cursor:pointer}.primary-button{border:0;background:var(--green);color:#15251a;font-weight:800}.primary-button span{margin-left:12px}.secondary-button{border:1px solid var(--line);background:transparent;color:#b7c9bd}.secondary-button:disabled{opacity:.35;cursor:not-allowed}.bar-row{display:grid;grid-template-columns:44px 1fr 28px;align-items:center;gap:10px;margin:18px 0;font-size:11px;color:#b5c7bb}.bar-row b{font:11px 'DM Mono',monospace;text-align:right;color:#dce8de}.mini-track{height:6px}.mini-track i{display:block;height:100%;width:60%;background:var(--green2);border-radius:99px;transition:width .25s}.experiment-tip{display:flex;gap:12px;margin-top:30px;padding:14px;background:#1a3025;border:1px solid #2b4937;border-radius:11px}.tip-icon{color:var(--green);font-size:18px}.experiment-tip b{font-size:11px}.experiment-tip p{font-size:11px;line-height:1.6;color:#9db4a4;margin:5px 0 0}footer{display:flex;justify-content:space-between;padding:28px 0 35px;color:#607b6a;font:9px 'DM Mono',monospace;letter-spacing:.5px}footer i{font-size:7px;color:var(--green);margin-left:5px}
+@media(max-width:850px){.app-shell{padding:0 18px}.workspace{grid-template-columns:1fr}.control-panel{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.control-panel>.section-kicker,.control-panel>h2,.control-panel>.panel-copy,.rate-card,.reset-button{grid-column:1/-1}.control-group{margin:12px 0}.lower-grid{grid-template-columns:1fr}.intro{padding-top:38px}.scene-wrap{height:310px}}
+@media(max-width:520px){.app-shell{padding:0 12px}.topbar{height:62px}.top-meta{display:none}.brand{margin-right:auto}.intro{padding:32px 3px 25px}.intro h1{letter-spacing:-2px}.intro p{font-size:13px}.visual-panel{padding:16px 14px 0}.panel-head h2{font-size:16px}.scene-wrap{height:270px}.stage-strip{margin:0 -14px}.stage{padding:12px 7px;gap:5px;font-size:9px;flex-direction:column;align-items:flex-start}.legend{gap:11px;font-size:10px}.control-panel{padding:20px 17px;display:block}.control-group{margin:23px 0}.lower-grid{gap:12px;margin-top:12px}.lesson-panel,.results-panel{padding:20px 17px}.lesson-panel h2,.results-panel h2{font-size:20px}.equation{font-size:13px}.lesson-actions button{padding:11px 10px}footer{gap:10px;font-size:8px}}
+
+/* ==========================================
+   BIOVERSE — GELİŞMİŞ LABORATUVAR TASARIMI
+   Mevcut stilleri koruyan ek tasarım katmanı
+   ========================================== */
+
+:root {
+  --green: #c7ff9a;
+  --green2: #8ce5a3;
+  --line: #345447;
+  --panel-glow: rgba(141, 229, 163, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 10% 35%, rgba(43, 100, 68, 0.12), transparent 36%),
+    radial-gradient(ellipse at 90% 75%, rgba(41, 94, 76, 0.10), transparent 34%),
+    var(--bg);
+}
+
+.app-shell {
+  width: 100%;
+}
+
+.topbar {
+  position: relative;
+}
+
+.brand-mark {
+  box-shadow: 0 0 24px rgba(184, 239, 141, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(184, 239, 141, 0.28);
+}
+
+.panel {
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  border-color: #416650;
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.18),
+    0 0 24px var(--panel-glow);
+}
+
+.scene-wrap {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(78, 145, 95, 0.24), transparent 58%),
+    linear-gradient(145deg, #142c22, #0c1914);
+}
+
+.scene-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(173, 225, 181, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(173, 225, 181, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent 95%);
+}
+
+.scene-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(180, 237, 182, 0.08);
+  border-radius: inherit;
+  box-shadow: inset 0 0 36px rgba(0, 0, 0, 0.12);
+}
+
+.scene-label,
+.scene-caption {
+  z-index: 2;
+  text-shadow: 0 2px 8px #07120c;
+}
+
+.live-pill {
+  background: rgba(132, 220, 151, 0.055);
+}
+
+.stage {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.stage:hover:not(.active) {
+  background: rgba(141, 229, 163, 0.055);
+  color: #edf8ee;
+}
+
+.stage.active {
+  box-shadow: inset 0 2px 0 var(--green2);
+  background: linear-gradient(
+    180deg,
+    rgba(141, 229, 163, 0.12),
+    rgba(141, 229, 163, 0.025)
+  );
+}
+
+.control-group {
+  padding: 2px 0;
+}
+
+input[type="range"] {
+  accent-color: var(--green2);
+  min-height: 20px;
+}
+
+input[type="range"]:focus-visible {
+  outline: 2px solid var(--green2);
+  outline-offset: 5px;
+  border-radius: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(140, 229, 163, 0.12);
+}
+
+.rate-card {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(141, 229, 163, 0.10), transparent 65%),
+    #172d22;
+}
+
+.rate-number strong {
+  color: #d5ffb5;
+  font-variant-numeric: tabular-nums;
+}
+
+.meter {
+  height: 8px;
+}
+
+.meter span,
+.mini-track i {
+  transition: width 0.25s ease;
+}
+
+.primary-button {
+  box-shadow: 0 5px 18px rgba(159, 229, 132, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(159, 229, 132, 0.18);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.reset-button,
+.secondary-button,
+.quiet-button {
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.reset-button:hover,
+.secondary-button:hover,
+.quiet-button:hover {
+  border-color: var(--green2);
+  color: #efffeb;
+}
+
+.equation-box {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(140, 229, 163, 0.06), transparent 70%),
+    #0d1a15;
+}
+
+.equation {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.experiment-tip {
+  background: linear-gradient(
+    120deg,
+    rgba(140, 229, 163, 0.09),
+    rgba(140, 229, 163, 0.025)
+  );
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--green2);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1100px) {
+  .workspace {
+    gap: 22px;
+  }
+
+  .visual-panel {
+    padding-top: 26px;
+  }
+
+  .scene-wrap {
+    height: clamp(340px, 31vw, 440px);
+  }
+
+  .control-panel {
+    padding: 28px;
+  }
+
+  .lower-grid {
+    gap: 22px;
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .panel {
+    border-radius: 14px;
+  }
+
+  .scene-wrap {
+    background-color: #102019;
+  }
+
+  .rate-number strong {
+    font-size: 35px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .reset-button {
+    min-height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+css
+/* BioVerse canlı fotosentez grafiği */
+.experiment-chart {
+  margin-top: 16px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #122219;
+}
+
+.chart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.chart-heading strong {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.chart-heading span {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "DM Mono", monospace;
+}
+
+.chart-area {
+  display: flex;
+  gap: 10px;
+  height: 130px;
+}
+
+.chart-y-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.chart-plot {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chart-grid-line {
+  width: 100%;
+  border-top: 1px solid rgba(184, 239, 141, 0.12);
+}
+
+#rateChart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#rateChartLine {
+  transition: points 0.25s ease;
+}
+
+.chart-axis-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  padding-left: 26px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* BioVerse — Deney defteri tasarımı */
+.notebook-panel {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #172b20, #101d16);
+}
+
+.notebook-panel h3 {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.notebook-intro {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.notebook-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.notebook-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 11px 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.notebook-summary span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.notebook-summary strong {
+  color: var(--green);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.notebook-label {
+  display: block;
+  margin: 16px 0 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#experimentObservation {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0c1711;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+#experimentObservation:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+#experimentObservation::placeholder {
+  color: var(--muted);
+}
+
+#saveExperimentBtn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--green);
+  color: #142018;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#saveExperimentBtn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.notebook-records {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.notebook-records h4 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+#notebookEmpty {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.experiment-record {
+  margin-top: 10px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.experiment-record h5 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.experiment-record p {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.experiment-record small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 420px) {
+  .notebook-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notebook-panel {
+    padding: 13px;
+  }
+}
+
+/* BioVerse — Hücresel solunum laboratuvarı */
+
+.respiration-panel {
+  margin-top: 24px;
+  padding: 22px;
+  overflow: hidden;
+}
+
+.respiration-panel h2 {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: clamp(22px, 4vw, 30px);
+}
+
+.respiration-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  margin: 22px 0;
+  padding: 20px 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at center, rgba(102, 170, 91, 0.14), transparent 68%),
+    #0c1711;
+}
+
+.mitochondrion {
+  display: grid;
+  place-items: center;
+  width: min(100%, 310px);
+  aspect-ratio: 1.65;
+  padding: 12px;
+  border: 3px solid #e4a66a;
+  border-radius: 48% 52% 45% 55% / 54% 44% 56% 46%;
+  background: linear-gradient(140deg, #75452f, #bd7950 50%, #70412f);
+  box-shadow:
+    0 0 24px rgba(226, 158, 99, 0.13),
+    inset 0 0 16px rgba(30, 14, 9, 0.5);
+  animation: mitochondrionFloat 5s ease-in-out infinite;
+}
+
+.mitochondrion-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 214, 155, 0.75);
+  border-radius: 48% 52% 45% 55% / 54% 44% 56% 46%;
+  background: linear-gradient(120deg, #d99a63, #efbd7d 48%, #c78150);
+}
+
+.crista {
+  flex: 0 0 11%;
+  height: 62%;
+  border: 3px solid #9c5036;
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 40%;
+  transform: skewY(-12deg);
+  box-shadow: inset 4px 0 rgba(255, 222, 162, 0.6);
+}
+
+.crista-two {
+  height: 78%;
+  transform: skewY(13deg);
+}
+
+.crista-three {
+  height: 70%;
+  transform: skewY(-15deg);
+}
+
+.crista-four {
+  height: 54%;
+  transform: skewY(10deg);
+}
+
+.mitochondrion-label {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border: 1px solid rgba(112, 65, 47, 0.5);
+  border-radius: 6px;
+  background: rgba(47, 29, 21, 0.82);
+  color: #fff0d6;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.visual-caption {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.respiration-controls {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.respiration-controls .control-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.respiration-controls label {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.respiration-controls .control-heading strong {
+  color: var(--green);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.respiration-controls input[type="range"] {
+  width: 100%;
+  margin: 4px 0 12px;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.respiration-result {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #192c20, #101c15);
+}
+
+.result-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.atp-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.atp-value strong {
+  color: var(--green);
+  font-size: 38px;
+  font-variant-numeric: tabular-nums;
+}
+
+.atp-value span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.atp-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.atp-bar {
+  width: 70%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #76bd70, #c4ef94);
+  transition: width 0.25s ease;
+}
+
+#respirationNote {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.respiration-facts {
+  margin-top: 16px;
+  padding: 16px;
+  border-left: 3px solid var(--green);
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.respiration-facts h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.respiration-facts p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.respiration-facts .equation {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0c1711;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes mitochondrionFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .respiration-panel {
+    padding: 14px;
+  }
+
+  .respiration-visual {
+    min-height: 220px;
+    padding: 14px 8px;
+  }
+
+  .mitochondrion {
+    width: 95%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mitochondrion {
+    animation: none;
+  }
+
+  .atp-bar {
+    transition: none;
+  }
+}
+
+/* BioVerse — Hücresel solunum aşamaları */
+
+.respiration-stages {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.respiration-stages > h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.respiration-stage-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.resp-stage-btn {
+  min-height: 48px;
+  padding: 9px 6px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #102017;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.resp-stage-btn.active {
+  border-color: var(--green);
+  background: rgba(150, 210, 120, 0.12);
+  color: var(--green);
+}
+
+.resp-stage-info {
+  padding: 15px;
+  border-left: 3px solid var(--green);
+  border-radius: 0 9px 9px 0;
+  background: #0c1711;
+}
+
+.resp-stage-info h4 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 15px;
+}
+
+.resp-stage-info p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.resp-stage-location {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 420px) {
+  .respiration-stage-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BioVerse — Fotosentez ve solunum bağlantısı */
+
+.cycle-panel {
+  margin-top: 24px;
+  padding: 22px;
+  overflow: hidden;
+}
+
+.cycle-panel h2 {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: clamp(21px, 4vw, 28px);
+}
+
+.cycle-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cycle-node {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #102017;
+  text-align: center;
+}
+
+.photosynthesis-node {
+  border-top: 3px solid #b8ef8d;
+}
+
+.respiration-node {
+  border-top: 3px solid #e4a66a;
+}
+
+.cycle-icon {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 27px;
+}
+
+.respiration-node .cycle-icon {
+  color: #e4a66a;
+}
+
+.cycle-node h3 {
+  margin: 6px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.cycle-node p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cycle-node strong {
+  display: block;
+  color: var(--green);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.respiration-node strong {
+  color: #e4a66a;
+}
+
+.cycle-arrow {
+  display: block;
+  padding: 5px;
+  color: var(--muted);
+}
+
+.cycle-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.connector-arrow {
+  color: var(--green);
+  font-size: 22px;
+}
+
+.return-connector .connector-arrow {
+  color: #e4a66a;
+}
+
+.cycle-note {
+  margin-top: 18px;
+  padding: 15px;
+  border-left: 3px solid var(--green);
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.cycle-note strong {
+  color: var(--green);
+  font-size: 13px;
+}
+
+.cycle-note p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (min-width: 680px) {
+  .cycle-flow {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .cycle-connector {
+    flex-direction: column;
+    max-width: 90px;
+  }
+
+  .return-connector {
+    grid-column: 1 / -1;
+    flex-direction: row-reverse;
+  }
+}
+
+/* BioVerse — Laboratuvarlar arası gezinme */
+
+.lab-navigation {
+  position: sticky;
+  top: 8px;
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  margin: 16px 0 22px;
+  padding: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(15, 28, 20, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.lab-nav-link {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lab-nav-link span {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lab-nav-link:hover,
+.lab-nav-link.active {
+  border-color: var(--line);
+  background: rgba(184, 239, 141, 0.1);
+  color: var(--text);
+}
+
+#scene,
+#respirationLab,
+#cyclePanel {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 480px) {
+  .lab-navigation {
+    top: 4px;
+  }
+
+  .lab-nav-link {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+/* BIOVERSE — BİLGİ TESTİ TASARIMI */
+
+.quiz-panel {
+  scroll-margin-top: 100px;
+}
+
+.quiz-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 10px;
+  color: var(--muted, #a7b9ac);
+  font-size: 0.9rem;
+}
+
+.quiz-progress-track {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+#quizProgressBar {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: #b5e887;
+  transition: width 0.3s ease;
+}
+
+.quiz-topic {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(181, 232, 135, 0.3);
+  border-radius: 8px;
+  color: #c9f1a8;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+#quizQuestion {
+  margin: 0 0 22px;
+  line-height: 1.6;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quiz-option {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: #b5e887;
+  background: rgba(181, 232, 135, 0.08);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.quiz-option.correct {
+  border-color: #8bd49a;
+  background: rgba(80, 190, 110, 0.13);
+}
+
+.quiz-option.incorrect {
+  border-color: #e99a8e;
+  background: rgba(220, 90, 75, 0.13);
+}
+
+.quiz-feedback {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid rgba(181, 232, 135, 0.25);
+  border-radius: 12px;
+  background: rgba(181, 232, 135, 0.06);
+  line-height: 1.7;
+}
+
+.quiz-feedback p {
+  margin-bottom: 0;
+}
+
+.quiz-feedback.correct-feedback {
+  border-color: #8bd49a;
+}
+
+.quiz-feedback.incorrect-feedback {
+  border-color: #e99a8e;
+}
+
+#quizNextBtn,
+#quizRestartBtn {
+  margin-top: 18px;
+}
+
+.quiz-final-result {
+  padding: 24px 0 8px;
+  text-align: center;
+}
+
+.quiz-final-result h3 {
+  color: #c9f1a8;
+}
+
+@media (max-width: 600px) {
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-progress-info {
+    font-size: 0.82rem;
+  }
+}
+
+/* BIOVERSE — ETKİLEŞİMLİ HÜCRE TASARIMI */
+
+.cell-lab-panel {
+  scroll-margin-top: 100px;
+}
+
+.cell-lab-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.cell-visual-area {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(181, 232, 135, 0.15);
+  border-radius: 18px;
+  background: rgba(10, 25, 19, 0.45);
+}
+
+.interactive-cell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.15 / 1;
+  overflow: hidden;
+  border: 4px solid #9bcf9d;
+  border-radius: 48% 52% 45% 55% / 51% 43% 57% 49%;
+  background:
+    radial-gradient(ellipse at 40% 45%, rgba(173, 220, 155, 0.16), transparent 65%),
+    #173c30;
+  box-shadow:
+    inset 0 0 0 7px rgba(181, 232, 135, 0.07),
+    0 0 24px rgba(112, 195, 129, 0.08);
+  animation: cellFloat 5s ease-in-out infinite;
+}
+
+@keyframes cellFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.organelle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #f5fff3;
+  font-size: clamp(9px, 1.5vw, 12px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.organelle span {
+  pointer-events: none;
+  text-align: center;
+}
+
+.organelle:hover,
+.organelle:focus-visible {
+  z-index: 5;
+  transform: scale(1.09);
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(201, 241, 168, 0.65);
+  outline: none;
+}
+
+.organelle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.nucleus {
+  top: 28%;
+  left: 32%;
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c5a9ee, #7657a9 75%);
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.mitochondrion {
+  width: 30%;
+  height: 14%;
+  border-radius: 50%;
+  background: #b56c43;
+  border-color: #f2c49a;
+  transform: rotate(-25deg);
+}
+
+.mitochondrion:hover,
+.mitochondrion:focus-visible {
+  transform: rotate(-25deg) scale(1.09);
+}
+
+.cell-mito-one {
+  top: 17%;
+  left: 8%;
+}
+
+.cell-mito-two {
+  right: 7%;
+  bottom: 22%;
+  transform: rotate(25deg);
+}
+
+.cell-mito-two:hover,
+.cell-mito-two:focus-visible {
+  transform: rotate(25deg) scale(1.09);
+}
+
+.golgi {
+  right: 9%;
+  top: 27%;
+  width: 24%;
+  height: 22%;
+  border-radius: 45%;
+  background: repeating-linear-gradient(
+    0deg,
+    #c69b5a 0 4px,
+    #795b37 4px 7px
+  );
+}
+
+.vacuole {
+  left: 13%;
+  bottom: 16%;
+  width: 26%;
+  height: 23%;
+  border-radius: 48%;
+  background: rgba(104, 177, 201, 0.8);
+  border-color: #b9eafa;
+}
+
+.ribosome {
+  top: 67%;
+  left: 47%;
+  width: 37%;
+  height: 14%;
+  border-radius: 999px;
+  background: #588c73;
+  border-color: #b4e2bd;
+}
+
+.organelle-info {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(181, 232, 135, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.organelle-info h3 {
+  margin: 12px 0;
+  color: #c9f1a8;
+}
+
+.organelle-info p {
+  line-height: 1.75;
+}
+
+.organelle-location {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #b5e887;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 650px) {
+  .cell-lab-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cell-visual-area {
+    padding: 10px;
+  }
+
+  .interactive-cell {
+    max-width: 440px;
+    margin: auto;
+  }
+
+  .organelle-info {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-cell {
+    animation: none;
+  }
+
+  .organelle {
+    transition: none;
+  }
+}
+
+/* Seçili organelin vurgulanması */
+
+.organelle.selected {
+  z-index: 6;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(201, 241, 168, 0.3),
+    0 0 20px rgba(201, 241, 168, 0.75);
+  filter: brightness(1.2);
+}
+
+/* BIOVERSE — HÜCRE İÇİ HAREKETLİ PARÇACIKLAR */
+.cell-particle {
+  position: absolute;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c9f1a8;
+  box-shadow: 0 0 12px rgba(201, 241, 168, 0.8);
+  pointer-events: none;
+  animation: particleDrift 4s ease-in-out infinite alternate;
+}
+
+.particle-one {
+  top: 18%;
+  left: 45%;
+  animation-delay: 0s;
+}
+
+.particle-two {
+  top: 60%;
+  left: 18%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 1s;
+}
+
+.particle-three {
+  top: 76%;
+  left: 70%;
+  width: 7px;
+  height: 7px;
+  animation-delay: 2s;
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(18px, -14px);
+    opacity: 0.7;
+  }
+}
+
+/* BIOVERSE — ATP ENERJİ ANİMASYONU */
+.energy-lab-panel {
+  scroll-margin-top: 100px;
+}
+
+.energy-stage {
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  margin: 22px 0;
+  overflow: hidden;
+  border: 1px solid rgba(181, 232, 135, 0.18);
+  border-radius: 18px;
+  background: rgba(10, 25, 19, 0.45);
+}
+
+.energy-mitochondrion {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(75%, 340px);
+  height: 125px;
+  border: 4px solid #f2c49a;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8e4e35, #c77b4d, #75402f);
+  box-shadow: 0 0 24px rgba(220, 143, 89, 0.2);
+}
+
+.energy-inner-folds {
+  position: absolute;
+  inset: 15px 22px;
+  border: 3px dashed rgba(255, 222, 177, 0.85);
+  border-radius: 45%;
+}
+
+.energy-label {
+  z-index: 1;
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(48, 28, 21, 0.8);
+  color: white;
+  font-size: 13px;
+}
+
+.atp-particle {
+  position: absolute;
+  z-index: 2;
+  padding: 4px 7px;
+  border: 1px solid #d8f7b9;
+  border-radius: 999px;
+  background: #315d3c;
+  color: #f5ffe9;
+  font-size: 11px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.atp-one { left: 15%; top: 10%; }
+.atp-two { right: 12%; top: 22%; }
+.atp-three { right: 25%; bottom: 5%; }
+
+.energy-mitochondrion.producing {
+  animation: energyPulse 1.2s ease-in-out infinite alternate;
+}
+
+.energy-mitochondrion.producing .atp-particle {
+  animation: atpRelease 2.4s ease-out infinite;
+}
+
+.energy-mitochondrion.producing .atp-two {
+  animation-delay: 0.8s;
+}
+
+.energy-mitochondrion.producing .atp-three {
+  animation-delay: 1.6s;
+}
+
+@keyframes energyPulse {
+  from { box-shadow: 0 0 12px rgba(220, 143, 89, 0.25); }
+  to { box-shadow: 0 0 32px rgba(220, 200, 120, 0.75); }
+}
+
+@keyframes atpRelease {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.7); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(35px, -35px) scale(1.1); }
+}
+
+.energy-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.energy-controls button {
+  padding: 11px 15px;
+  border: 1px solid #9bcf9d;
+  border-radius: 10px;
+  background: #244b37;
+  color: #f5fff3;
+  cursor: pointer;
+}
+
+.energy-controls button:hover {
+  background: #326347;
+}
+
+.energy-status {
+  min-height: 28px;
+  color: #c9f1a8;
+  line-height: 1.6;
+}
+
+.energy-note {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .energy-mitochondrion.producing,
+  .energy-mitochondrion.producing .atp-particle {
+    animation-duration: 8s;
+  }
+}
+
+/* BIOVERSE — DENEY GÖREVLERİ TASARIMI */
+.experiment-mission {
+  scroll-margin-top: 100px;
+}
+
+.mission-card {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid rgba(181, 232, 135, 0.24);
+  border-radius: 18px;
+  background: rgba(10, 25, 19, 0.45);
+}
+
+.mission-number {
+  color: #b5e887;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.mission-card h3 {
+  margin: 12px 0;
+  color: #c9f1a8;
+}
+
+.mission-card p {
+  line-height: 1.7;
+}
+
+.mission-card label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 600;
+}
+
+.mission-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(181, 232, 135, 0.35);
+  border-radius: 10px;
+  background: #173c30;
+  color: #f5fff3;
+}
+
+.mission-card input[type="range"] {
+  width: 100%;
+  accent-color: #b5e887;
+  cursor: pointer;
+}
+
+.mission-reading {
+  color: #c9f1a8;
+}
+
+#runMission {
+  padding: 12px 17px;
+  border: 1px solid #9bcf9d;
+  border-radius: 10px;
+  background: #244b37;
+  color: #f5fff3;
+  cursor: pointer;
+}
+
+#runMission:hover {
+  background: #326347;
+}
+
+.mission-result {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(181, 232, 135, 0.07);
+  border: 1px solid rgba(181, 232, 135, 0.2);
+}
+
+.mission-result h4 {
+  margin-top: 0;
+  color: #c9f1a8;
+}
+
+.mission-progress {
+  color: #b5e887;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .mission-card {
+    padding: 16px;
+  }
+}
+
+/* BIOVERSE — DENEY SONUÇLARI */
+.mission-chart-panel {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid rgba(181, 232, 135, 0.2);
+  border-radius: 14px;
+  background: rgba(10, 25, 19, 0.35);
+}
+
+.mission-chart-panel h4 {
+  color: #c9f1a8;
+}
+
+.mission-chart {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  min-height: 170px;
+  margin: 18px 0;
+  padding: 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mission-chart-empty {
+  align-self: center;
+  color: #b7c8bb;
+}
+
+.mission-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 6px;
+  min-width: 48px;
+  height: 150px;
+  font-size: 12px;
+}
+
+.mission-bar {
+  width: 30px;
+  min-height: 4px;
+  border-radius: 7px 7px 0 0;
+  background: linear-gradient(to top, #4d956b, #c9f1a8);
+  transition: height 0.3s ease;
+}
+
+.mission-chart-panel button {
+  margin: 4px;
+  padding: 10px 13px;
+  border: 1px solid #9bcf9d;
+  border-radius: 9px;
+  background: #244b37;
+  color: #f5fff3;
+  cursor: pointer;
+}
+
+#missionSaveStatus {
+  color: #c9f1a8;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-bar {
+    transition: none;
+  }
+}
+
+/* BioVerse — mobil ve dokunmatik ekran iyileştirmeleri */
+
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  max-width: 100%;
+}
+
+.app-shell,
+main,
+.workspace,
+.lower-grid,
+.panel,
+.cycle-panel,
+.respiration-panel,
+.cell-lab-panel {
+  min-width: 0;
+}
+
+img,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input[type="range"] {
+  width: 100%;
+  min-height: 32px;
+  touch-action: pan-y;
+  cursor: pointer;
+}
+
+button,
+.primary-button,
+.secondary-button,
+.reset-button,
+.lab-nav-link {
+  touch-action: manipulation;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .panel,
+  .cycle-panel,
+  .respiration-panel {
+    max-width: 100%;
+  }
+
+  .scene-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .scene-label {
+    max-width: calc(100% - 24px);
+    overflow-wrap: anywhere;
+  }
+
+  .stage-strip {
+    min-width: 0;
+  }
+
+  .stage {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .lesson-actions {
+    flex-wrap: wrap;
+  }
+
+  .lesson-actions button {
+    min-height: 44px;
+  }
+
+  .lab-nav-link {
+    min-height: 44px;
+  }
+}

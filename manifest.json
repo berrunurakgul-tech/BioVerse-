@@ -1,0 +1,44 @@
+
+{
+  "name": "BioVerse — Sanal Biyoloji Laboratuvarı",
+  "short_name": "BioVerse",
+  "description": "Fotosentezi etkileşimli olarak keşfet.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1512",
+  "theme_color": "#10251f",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+     "src": "./images/screenshots/screenshot-wide.png",
+     
+     "sizes": "1917x1072",
+
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "BioVerse masaüstü görünümü"
+    },
+    {
+ "src": "./images/screenshots/screenshot-mobile.png",
+
+"sizes": "380x821" ,
+  "type": "image/png",
+  "form_factor": "narrow",
+  "label": "BioVerse mobil görünümü"
+}
+  ]
+}
